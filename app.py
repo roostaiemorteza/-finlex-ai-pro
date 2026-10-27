@@ -160,7 +160,7 @@ elif choice == menu[3]:
         color = 'red' if isinstance(val, (int, float)) and val < 0 else 'green' if isinstance(val, (int, float)) and val > 0 else 'white'
         return f'color: {color}'
 
-    st.dataframe(df_pl.style.applymap(color_negative_red, subset=["Tutar (₺)" if is_tr else "Amount (₺)"]), use_container_width=True)
+    st.dataframe(df_pl.style.map(color_negative_red, subset=["Tutar (₺)" if is_tr else "Amount (₺)"]), use_container_width=True)
 
     fig = go.Figure(go.Waterfall(
         name="20", orientation="v",
