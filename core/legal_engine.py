@@ -1,5 +1,5 @@
 import re
-def mask_sensitive_pii(text):
+def mask_sensitive_data(text):
  stats={"TC":0,"IBAN":0,"Telefon":0,"E-posta":0}
  def replace(pattern,fn,key,s):
   def wrapped(m): stats[key]+=1; return fn(m)
