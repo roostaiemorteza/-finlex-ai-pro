@@ -1,8 +1,8 @@
 # FinLex AI Pro
 
-رابط نمایشی چندزبانه برای داشبورد مالی، بررسی قرارداد، حسابداری، نرخ ارز و حریم خصوصی.
+Multilingual demo UI for financial dashboard, contract review, accounting, FX rates and privacy.
 
-## اجرا
-`pip install -r requirements.txt` سپس `streamlit run app.py`
+## Run
+`pip install -r requirements.txt` then `streamlit run app.py`
 
-نسخه دمو است و به سرویس AI، بانک یا سامانه مالیاتی متصل نیست؛ داده‌ها و خروجی‌ها نمونه‌اند. پیش از استفاده عملیاتی، بازبینی حقوقی/مالیاتی، احراز هویت و کنترل دسترسی لازم است.
+Demo version only - not connected to AI services, banks or tax authorities; all data is sample data.
