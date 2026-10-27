@@ -9,7 +9,7 @@ def mask_sensitive_data(text):
  text=replace(r"(?:\+?90|0)?5[0-9]{2}[\s-]?[0-9]{3}[\s-]?[0-9]{2}[\s-]?[0-9]{2}",lambda m:"+90 5** *** ** **","Telefon",text)
  text=replace(r"([a-zA-Z0-9_.+-]+)@([a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)",lambda m:m.group(1)[:2]+"***@"+m.group(2),"E-posta",text)
  return {"masked_text":text,"stats":stats}
-def calculate_severance_indemnity(start_date,end_date,gross_salary):
+ def calculate_severance(start_date, end_date, gross_salary):
  days=(end_date-start_date).days; years=days/365.25; cap=46900.0; eligible=years>=1; base=min(gross_salary,cap); gross=base*years if eligible else 0
  weeks=2 if days<180 else 4 if days<=540 else 6 if days<=1080 else 8; ihbar=gross_salary/30*weeks*7
  return {"eligible":eligible,"years_worked":round(years,2),"gross_kidem":round(gross,2),"net_kidem":round(gross*(1-.00759),2),"notice_weeks":weeks,"gross_ihbar":round(ihbar,2),"net_ihbar":round(ihbar*(1-.15-.00759),2),"total_net":round(gross*(1-.00759)+ihbar*(1-.15-.00759),2),"kidem_tavani":cap}
